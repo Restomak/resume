@@ -1,0 +1,112 @@
+:root {
+  --resto-purple: hsl(292, 99%, 27%);
+  --resto-blue: hsl(222, 100%, 50%);
+  --resto-green: hsl(135, 100%, 25%);
+  --resto-yellow: hsl(56, 100%, 50%);
+  --resto-orange: hsl(33, 100%, 50%);
+  --resto-red: hsl(0, 100%, 45%);
+  --resto-white: hsl(0, 0%, 100%);
+  --resto-grey: hsl(0, 0%, 94%);
+  --resto-black: hsl(0, 0%, 0);
+  --resto-deep-purple: hsl(269, 82%, 25%);
+
+  font-family: sans-serif;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus-visible {
+  border-color: transparent !important;
+  outline: 2px dotted var(--resto-black) !important;
+  outline-offset: -2px !important;
+  box-shadow: 0 2px 0 inset var(--resto-white) !important;
+}
+
+.container {
+  width: clamp(66%, 100ch, 100%);
+  margin-right: auto;
+  margin-left: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+header {
+  background-color: var(--resto-deep-purple);
+  color: var(--resto-white);
+  position: relative;
+  overflow: hidden;
+}
+
+header .container > div {
+  padding: 1rem 3rem;
+}
+
+main {
+  padding: 0 3rem;
+}
+
+aside {
+  background-color: var(--resto-grey);
+  padding: 0 1rem;
+}
+
+aside a {
+  word-break: break-all;
+}
+
+h1 {
+  margin: 0.5rem 0 0;
+  font-size: 2rem;
+}
+
+.rainbow {
+  position: absolute;
+  top: -2.4rem;
+  right: -2.4rem;
+  width: 4.8rem;
+  transform: rotate(-45deg);
+}
+
+.rainbow > div {
+  height: 0.8rem;
+  width: 100%;
+}
+
+.purple {
+  background-color: var(--resto-purple);
+}
+
+.blue {
+  background-color: var(--resto-blue);
+}
+
+.green {
+  background-color: var(--resto-green);
+}
+
+.yellow {
+  background-color: var(--resto-yellow);
+}
+
+.orange {
+  background-color: var(--resto-orange);
+}
+
+.red {
+  background-color: var(--resto-red);
+}
+
+@media screen and (min-width: 70ch) {
+  .container {
+    grid-template-columns: 70% 30%;
+  }
+}
+
+@media screen and (min-width: 190ch) {
+  .container {
+    grid-template-columns: 75% 25%;
+  }
+}
