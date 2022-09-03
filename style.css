@@ -1,3 +1,4 @@
+/* Set up variables. */
 :root {
   --resto-purple: hsl(292, 99%, 27%);
   --resto-blue: hsl(222, 100%, 50%);
@@ -18,6 +19,7 @@
   box-sizing: border-box;
 }
 
+/* Global focus styles. */
 *:focus-visible {
   border-color: transparent !important;
   outline: 0.125em dotted var(--resto-black) !important;
@@ -25,6 +27,7 @@
   box-shadow: 0 0.125em 0 inset var(--resto-white) !important;
 }
 
+/* Resume styels. */
 header {
   position: relative;
   overflow: hidden;
