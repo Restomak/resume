@@ -7,7 +7,7 @@
   --resto-red: hsl(0, 100%, 45%);
   --resto-white: hsl(0, 0%, 100%);
   --resto-grey: hsl(0, 0%, 94%);
-  --resto-black: hsl(0, 0%, 0);
+  --resto-black: hsl(0, 0%, 0%);
   --resto-deep-purple: hsl(269, 82%, 25%);
 
   font-family: sans-serif;
@@ -20,46 +20,72 @@
 
 *:focus-visible {
   border-color: transparent !important;
-  outline: 2px dotted var(--resto-black) !important;
-  outline-offset: -2px !important;
-  box-shadow: 0 2px 0 inset var(--resto-white) !important;
-}
-
-.container {
-  width: clamp(66%, 100ch, 100%);
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: 1fr;
+  outline: 0.125em dotted var(--resto-black) !important;
+  outline-offset: -0.125em !important;
+  box-shadow: 0 0.125em 0 inset var(--resto-white) !important;
 }
 
 header {
-  background-color: var(--resto-deep-purple);
-  color: var(--resto-white);
   position: relative;
   overflow: hidden;
-}
-
-header .container > div {
-  padding: 1rem 3rem;
+  background-color: var(--resto-deep-purple);
+  color: var(--resto-white);
 }
 
 main {
-  padding: 0 3rem;
+  padding: 0 3rem 3rem;
 }
 
 aside {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
   background-color: var(--resto-grey);
-  padding: 0 1rem;
+  gap: 3rem;
 }
 
 aside a {
   word-break: break-all;
 }
 
+aside section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
 h1 {
   margin: 0.5rem 0 0;
   font-size: 2rem;
+}
+
+h2 {
+  padding-bottom: 0.25em;
+}
+
+h3,
+.h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+h4,
+.h4 {
+  margin-bottom: 0.25em;
+  padding-bottom: 0.25em;
+  font-size: 1.125rem;
+}
+
+ul {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: clamp(66%, 100ch, 100%);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .rainbow {
@@ -71,8 +97,12 @@ h1 {
 }
 
 .rainbow > div {
-  height: 0.8rem;
   width: 100%;
+  height: 0.8rem;
+}
+
+header .container > div {
+  padding: 1rem 3rem;
 }
 
 .purple {
@@ -99,14 +129,129 @@ h1 {
   background-color: var(--resto-red);
 }
 
-@media screen and (min-width: 70ch) {
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  border: 0 !important;
+  white-space: nowrap !important;
+}
+
+.border-bottom {
+  border-bottom: 0.1rem solid var(--resto-deep-purple);
+}
+
+.project {
+  display: grid;
+  grid-template-areas:
+    "time"
+    "title"
+    "role"
+    "responsibilities"
+    "current"
+    "past";
+  grid-template-columns: auto;
+  gap: 0.5rem 1rem;
+}
+
+.project-time-period {
+  grid-area: time;
+  color: var(--resto-deep-purple);
+  font-weight: bold;
+}
+
+.project-title {
+  grid-area: title;
+}
+
+.project-role {
+  grid-area: role;
+}
+
+.project-responsibilities {
+  grid-area: responsibilities;
+}
+
+.project-current-projects {
+  grid-area: current;
+}
+
+.project-past-projects {
+  grid-area: past;
+}
+
+.git-list,
+.skills-list,
+.language-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+.education-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 2rem;
+}
+
+.education-list span {
+  display: block;
+}
+
+.skills {
+  display: grid;
+  grid-template-areas: "skills title";
+  gap: 0.5rem;
+}
+
+.skills-list {
+  grid-area: "skills";
+}
+
+.skills h3 {
+  grid-area: title;
+  align-self: flex-end;
+  color: var(--resto-deep-purple);
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+@media (min-width: 70ch) {
   .container {
     grid-template-columns: 70% 30%;
   }
+
+  .project {
+    grid-template-areas:
+      "time title"
+      "time role"
+      ". responsibilities"
+      ". current"
+      ". past";
+    grid-template-columns: 7ch auto;
+  }
+
+  .education-list span {
+    padding-left: 5rem;
+  }
 }
 
-@media screen and (min-width: 190ch) {
+@media (min-width: 190ch) {
   .container {
     grid-template-columns: 75% 25%;
+  }
+}
+
+@media print {
+  a {
+    color: var(--resto-black);
+    text-decoration: none;
   }
 }
