@@ -1,0 +1,28 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "A resume for Amanda/Robert Laviolette.",
+  "private": true,
+  "scripts": {
+    "lint": "npm run stylelint -- --fix && npm run prettier -- --write",
+    "stylelint": "stylelint '**/*.css'",
+    "prettier": "prettier '**/*.css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Restomak/resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Restomak/resume/issues"
+  },
+  "homepage": "https://github.com/Restomak/resume#readme",
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-property-sort-order-smacss": "^9.0.0",
+    "stylelint-config-recommended": "^9.0.0"
+  }
+}
