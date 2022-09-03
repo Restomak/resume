@@ -36,7 +36,7 @@ header {
 }
 
 main {
-  padding: 0 3rem 3rem;
+  padding: 3rem;
 }
 
 aside {
@@ -253,8 +253,55 @@ header .container > div {
 }
 
 @media print {
+  :root {
+    font-size: 12pt;
+  }
+
   a {
     color: var(--resto-black);
     text-decoration: none;
+  }
+
+  .container {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  header {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    display: block;
+    width: 70%;
+    margin: 0;
+  }
+
+  aside {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    margin: 0;
+    font-size: 10pt;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  .page-break {
+    page-break-before: always;
+    padding-top: 3rem;
   }
 }
