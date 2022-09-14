@@ -302,6 +302,5 @@ header .container > div {
 
   .page-break {
     page-break-before: always;
-    padding-top: 3rem;
   }
 }
