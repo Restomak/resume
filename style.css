@@ -262,12 +262,6 @@ header .container > div {
     text-decoration: none;
   }
 
-  .container {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-
   header {
     display: block;
     width: 100%;
@@ -276,15 +270,17 @@ header .container > div {
   main {
     display: block;
     width: 70%;
+    height: 100%;
     margin: 0;
+    padding-bottom: 0;
   }
 
   aside {
     position: absolute;
     top: 0;
     right: 0;
-    bottom: 0;
     width: 30%;
+    height: 100%;
     margin: 0;
     font-size: 10pt;
     gap: 2rem;
@@ -300,8 +296,31 @@ header .container > div {
     page-break-inside: avoid;
   }
 
+  h4,
+  .h4 {
+    margin-top: 0.25em;
+  }
+
+  .container {
+    display: block;
+    position: relative;
+    width: 100%;
+  }
+
+  .page {
+    position: relative;
+    height: 100%;
+  }
+
+  .main-container {
+    display: inline-flex;
+    position: absolute;
+    top: 6rem;
+    height: 60rem;
+    border: 1px solid blue;
+  }
+
   .page-break {
     page-break-before: always;
-    padding-top: 3rem;
   }
 }
