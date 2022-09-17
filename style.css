@@ -210,7 +210,9 @@ header .container > div {
 
 .skills {
   display: grid;
-  grid-template-areas: "skills title";
+  grid-template-areas:
+    "skills"
+    "title";
   gap: 0.5rem;
 }
 
@@ -224,6 +226,7 @@ header .container > div {
   color: var(--resto-deep-purple);
   font-size: 1rem;
   font-weight: normal;
+  text-align: right;
 }
 
 @media (min-width: 70ch) {
@@ -243,6 +246,12 @@ header .container > div {
 
   .education-list span {
     padding-left: 5rem;
+  }
+}
+
+@media (min-width: 85ch) {
+  .skills {
+    grid-template-areas: "skills title";
   }
 }
 
