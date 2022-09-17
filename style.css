@@ -326,7 +326,6 @@ header .container > div {
     position: absolute;
     top: 6rem;
     height: 60rem;
-    border: 1px solid blue;
   }
 
   .page-break {
